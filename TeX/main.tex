@@ -381,6 +381,8 @@ pipeline, already pre-prepared for our purpose (binary text-classification).
     \label{fig:P2.SpaCy}
 \end{figure}
 
+\pagebreak
+
 \subsection{Fine-tuning HuggingFace: Distil-BERT}
 
 For the next section, I chose not to use the GPT API (because I did not
@@ -394,6 +396,20 @@ having two BERT models for this project.
     Validation accuracy & 78.95\%\\
     Test accuracy & 77.85\%\\
 \end{tabular}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{P2.Distil-BERT.jpg}
+    \caption{HuggingFace workspace dashboard (robust-plant-4 is the final model, purple)}
+    \label{fig:P2.SpaCy}
+\end{figure}
+
+The SpaCy model and the Distil-BERT model were saved and used for the next phase,
+as they had the best results.
+
+\section{Phase 3}
+
+
 
 \makeendpage
 \end{document}

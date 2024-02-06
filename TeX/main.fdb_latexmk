@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1707221570 "main.xdv" "main.pdf" "main" 1707221572 0
-  "main.xdv" 1707221570 137024 c38212d13ff65846463ebf6e30449bc1 "xelatex"
+["xdvipdfmx"] 1707223779 "main.xdv" "main.pdf" "main" 1707223781 0
+  "main.xdv" 1707223779 141304 b6c6f71de0d7d4b607efc2312519fac4 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1707221566 "d:/University/Projects/Python/DS Project/TeX/main.tex" "main.xdv" "main" 1707221572 0
+["xelatex"] 1707223777 "d:/University/Projects/Python/DS Project/TeX/main.tex" "main.xdv" "main" 1707223781 0
   "C:/Users/Arad/AppData/Local/MiKTeX/miktex/data/le/xetex/xelatex.fmt" 1685037385 36437090 c3f6ac7163963a287aea1c86f5212bd8 ""
   "D:/Program Files/MiKTeX/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136759654 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "D:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
@@ -191,12 +191,12 @@
   "D:/Program Files/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253169183 1380 971a51b00a14503ddf754cab24c3f209 ""
   "D:/Program Files/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/Program Files/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
-  "d:/University/Projects/Python/DS Project/TeX/main.tex" 1707221561 11906 44767c80958e6088174966b3b05ee2c2 ""
+  "d:/University/Projects/Python/DS Project/TeX/main.tex" 1707223776 12275 55a75ba4e79e57188e5f2d649c8fa105 ""
   "logo/logo.png" 1684431440 12151 908dd55c5271716f7a77323a8a57a0ad ""
   "logo/logo2.png" 1684431440 43293 47a971f37e4440ed15271482e03873bf ""
-  "main.aux" 1707221570 7731 354113fd13de209e0738cb961f378790 "xelatex"
-  "main.out" 1707221570 2240 fd7faa30c3869dd7a23aaeed5693d93e "xelatex"
-  "main.tex" 1707221561 11906 44767c80958e6088174966b3b05ee2c2 ""
+  "main.aux" 1707223779 8166 4ddfafc8ee532ef8b501041858bffcb0 "xelatex"
+  "main.out" 1707223779 2324 f7593c7cad7efcf934785e0b87da6f35 "xelatex"
+  "main.tex" 1707223776 12275 55a75ba4e79e57188e5f2d649c8fa105 ""
   "pictures//P1.1.2.png" 1707207783 32641 cf003ee2840e5f8f25435bbcb475de5e ""
   "pictures//P1.1.3.png" 1707208088 36039 8190a51834302e04148e103639610170 ""
   "pictures//P1.1.jpg" 1707207163 21111 cebd0e3312d7eccf05c2849addca9c9a ""
@@ -214,6 +214,7 @@
   "pictures//P1.6.3.png" 1707216543 27817 bea81501e08bda0596b5515c97128c78 ""
   "pictures//P1.7.png" 1707217751 100737 97fab0bc4b1fc31781a1f6d4325cfa4f ""
   "pictures//P2.BOW.1.png" 1707219663 32282 016cf6a397c5e2c5acc1473cffe8be15 ""
+  "pictures//P2.Distil-BERT.jpg" 1707223568 159695 f017e86618221225cdc46f75ebb171f6 ""
   "pictures//P2.SpaCy.jpg" 1707220773 61890 e5f11080c54e173767c536086f30ac31 ""
   "pictures//P2.TFIDF.1.png" 1707219937 32002 c28635e13c3d2f6d85e5991913fbc68f ""
   "pictures//P2.TFIDF.2.png" 1707219951 31631 5e403b7fc85892355d96ead1ca94a094 ""

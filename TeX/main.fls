@@ -1225,6 +1225,8 @@ INPUT .\pictures\\P2.TFIDF.2.png
 INPUT pictures\\P2.TFIDF.2.png
 INPUT .\pictures\\P2.SpaCy.jpg
 INPUT pictures\\P2.SpaCy.jpg
+INPUT .\pictures\\P2.Distil-BERT.jpg
+INPUT pictures\\P2.Distil-BERT.jpg
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out
