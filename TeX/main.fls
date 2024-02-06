@@ -1080,6 +1080,17 @@ INPUT D:\Program Files\MiKTeX\tex\latex\caption\caption3.sty
 INPUT D:\Program Files\MiKTeX\tex\latex\caption\caption3.sty
 INPUT D:\Program Files\MiKTeX\tex\latex\caption\caption3.sty
 INPUT D:\Program Files\MiKTeX\tex\latex\graphics\keyval.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
+INPUT D:\Program Files\MiKTeX\tex\latex\tools\array.sty
 INPUT .\uni-code.sty
 INPUT .\uni-code.sty
 INPUT uni-code.sty
@@ -1227,6 +1238,12 @@ INPUT .\pictures\\P2.SpaCy.jpg
 INPUT pictures\\P2.SpaCy.jpg
 INPUT .\pictures\\P2.Distil-BERT.jpg
 INPUT pictures\\P2.Distil-BERT.jpg
+INPUT .\pictures\\P3.correlation.jpg
+INPUT pictures\\P3.correlation.jpg
+INPUT .\pictures\\P3.correlation.2.jpg
+INPUT pictures\\P3.correlation.2.jpg
+INPUT .\pictures\\Bonus.jpg
+INPUT pictures\\Bonus.jpg
 INPUT main.aux
 INPUT .\main.out
 INPUT .\main.out

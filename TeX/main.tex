@@ -3,8 +3,9 @@
 \usepackage[en,bordered]{uni-style}
 \usepackage{uni-math}
 \usepackage{subcaption}
+\usepackage{array}
 
-\title{Sentiment Analysis and Stocks}
+\title{Sentiment Analysis on Tweets of Stocks}
 \prof{Dr. Khalaj}
 \department{Department of Electrical Engineering}
 \subtitle{Foundations of Data Science}
@@ -33,6 +34,9 @@ There are only 4 python notebooks and the .csv file for the web-crawler
 The process is also documented in the notebook files themselves. 
 There is text, and the code is segmented by the tasks in each 
 phase of the project, so hopefully it is readable.
+There are 4 notebook files, for the 3 phases and 1
+for the bonus points.
+
 
 \pagebreak
 
@@ -332,6 +336,8 @@ The Random Forest already looks more promising, judging by the confusion matrice
 The main diagonal of the confusion matrix seems brighter. It seems
 sentiment analysis is not linearly separable (what a surprise).
 
+\pagebreak
+
 \subsection{TF-IDF}
 
 \subsubsection{Support Vector Machine (SVM)}
@@ -401,15 +407,203 @@ having two BERT models for this project.
     \centering
     \includegraphics[width=1\textwidth]{P2.Distil-BERT.jpg}
     \caption{HuggingFace workspace dashboard (robust-plant-4 is the final model, purple)}
-    \label{fig:P2.SpaCy}
+    \label{fig:P2.DistilBERT}
 \end{figure}
 
+\subsection{Comparison of Models}
+
+Accuracy-wise, it can be easily shown that the last two models are better.
+That was not too far-fetched, as BOW is weak and RF and SVM and other
+traditional methods are not very practical in replicating the attention
+mechanisms required for NLP and Sentiment Analysis. They \textit{can} work,
+but deep methods with attention mechanisms (or other adjacency methods)
+are better at doing this special task; as the task is not neccessarily simple.
+
 The SpaCy model and the Distil-BERT model were saved and used for the next phase,
-as they had the best results.
+as they yielded the best results.
+
+\pagebreak
 
 \section{Phase 3}
 
+\subsection{Applying Classifiers}
 
+The main database is \textbf{very large}. I had to sample it again
+to achieve my results in reasonable time. I again used $N=100,000$
+samples, applied the CashTag(\$) extraction and used both of the
+models on the preprocessed tweet texts.
+
+\subsection{Pearson and Spearman Correlation}
+
+\begin{qsolve}[Task]
+    Using different correlation measures (at least 2 and you can use 
+    libraries), find the correlation between the sentiments of each CashTag 
+    and its value (from the financial data in the companies dataset) in a 
+    time interval.
+\end{qsolve}
+
+As the task required a `time interval', I used the middle month
+as a time to calculate the correlation. I used the `scipy.stats' 
+library for these correlations.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{P3.correlation.jpg}
+    \caption{Spearman and Pearson correlations for 
+    each model between sentiments and capitalizations}
+    \label{fig:P3.correlation}
+\end{figure}
+
+\begin{qsolve}[Task]
+    Using different correlation measures, find the correlation between 
+    change of sentiments of CashTag and the number of tweets related to 
+    that CashTag in the time series (By time series of tweets, we mean the 
+    number of tweets per given time that was calculated in the first part).
+\end{qsolve}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{P3.correlation.2.jpg}
+    \caption{Correlation for 
+    each model between sentiments and retweets-per-tweet}
+    \label{fig:P3.correlation.2}
+\end{figure}
+
+I may or may not have forgotten to use two correlation measures\dots
+
+The correlation amounts are very small, in general. Some of them are
+negative as well. This \textit{may} have a meaning, but the correlations
+I have arrived at are not meaningful/significant enough for conclusions.
+
+\pagebreak
+
+\subsection{Classifier Conflicts}
+
+\begin{qsolve}[Task]
+    Find examples where the classifiers do not agree on the sentiment of 
+    the tweet and analyze the results and discuss where does each 
+    classifier make mistakes.
+\end{qsolve}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ || m{25em} | m{8em}| m{5em} || }
+        \hline
+        \textbf{Text} & \textbf{Distil-BERT} & \textbf{SpaCy} \\ 
+        \hline
+
+        At Home Group Inc \$HOME Forecasted to Earn Q4 2018 Earnings 
+        of \$0.30 Per Share https://t.co/VDycVabjjq & NEGATIVE & POSITIVE\\
+        \hline
+
+        \$OCRX Company has begun dosing of the first patients in Part Two of 
+        a Phase1/Phase 2a clinical trial of oral OCR-0… 
+        https://t.co/csMCRZ2oBq & NEGATIVE & POSITIVE\\
+        \hline
+
+        SG Americas Securities LLC Cuts Position in Vector Group Ltd. \$VGR 
+        https://t.co/7Rp2CfVfOo & NEGATIVE & POSITIVE\\
+        \hline
+
+        Dimensional Fund Advisors LP Has \$15.57 Million Position in Capital 
+        City Bank Group \$CCBG https://t.co/x5hl85YeKQ & POSITIVE & NEGATIVE \\
+        \hline
+
+        Startin the week off with a bang. \$RGNX https://t.co/AX5RTRcGNh 
+        TV\_TradingIdeas & POSITIVE & NEGATIVE \\
+        \hline
+    \end{tabular}
+    \caption{Classifier disagreement examples}
+    \label{table:P3.t1}
+\end{table}
+
+For the first, second, and the fourth examples, I personally cannot decide
+on the sentiment as a human. However, for the third and fifth examples, I
+think the SpaCy model is slightly weaker than the Distil-BERT model.
+For instance in the fifth example, I think the model thinks that ``bang''
+is a bad word because of guns and weapons; while the phrase ``starting off with a bang''
+is a totally positive sentiment. Distil-BERT has managed to capture that.
+
+\pagebreak
+
+\subsection{Discussion}
+\begin{qsolve}
+    Discuss transfer learning and fine-tuning and how they can be used to 
+    improve the overall effect of the project. Use your limited results 
+    from the first part.
+\end{qsolve}
+
+\textbf{Transfer Learning} and \textbf{Fine-Tuning} are powerful techniques 
+in machine learning that can significantly improve the performance of a 
+model, especially when dealing with tasks where the available data is 
+limited.
+
+\textbf{Transfer Learning} is a technique where a pre-trained model, which 
+has been trained on a large-scale dataset, is used as a starting point for 
+a related task. The idea is to leverage the knowledge that the model has 
+already learned from the large dataset to perform the new task. This is 
+particularly useful when the new task has limited data, as it allows the 
+model to generalize better.
+
+For example, in the context of this project, a pre-trained language model 
+like BERT or Distil-BERT, which has been trained on a large corpus of text, 
+can be used as a starting point for sentiment analysis. The pre-trained 
+model already understands the semantics of the language to a great extent, 
+which can be leveraged to understand the sentiment of the tweets.
+
+\textbf{Fine-Tuning} is a process that adjusts the pre-trained model to the new 
+task. After initializing our model with the pre-trained weights, we 
+continue training the model on our specific task (like sentiment analysis 
+in this project). During this process, the model learns to adjust its
+weights and biases to specialize on the new task.
+
+In the context of this project, fine-tuning can be used to adapt the 
+pre-trained language model to the specific language and style used in the 
+tweets. This can lead to a more accurate sentiment prediction.
+
+In summary, transfer learning and fine-tuning can greatly improve the 
+performance of the model in this project by leveraging the knowledge from 
+large-scale pre-training and adapting it to the specific task of tweet 
+sentiment analysis. This can lead to more accurate sentiment predictions, 
+which in turn can improve the correlation analysis between tweet 
+sentiments and company values.
+
+We can check how the sentiment and amount of tweets change drastically in 
+a given time to loosely predict how the stock and capitalization of 
+companies will in turn, change. This is especially useful in trading and 
+forecasting the market. For example in the first part the time series plot 
+of tweets increase when the market reports arrive, and we can see peaks. 
+The sentiments may be mixed, however. Sentiments do not perform that well 
+when used for predicting the market (as our analysis showed). 
+This is especially important as piggybacking may occur and bots may be 
+involved to change the public views on some stock so that people will buy 
+them.
+
+\pagebreak
+
+\section{Bonus Time!}
+I only did the web-crawling part. I chose ``divar.ir'' to crawl because it seemed easier.
+
+\subsection{Web-Crawler}
+
+The results are available as `divar.csv'. Because of the variance between loading
+times and the internet connection and etc\dots , I used many try/catch
+statements and that is why some of the fields inside the .csv file is empty.
+While doing the web-crawling, the website gave me a 408 time-out because there were
+too many requests in such little time. A part of the dataset may be affected by that.
+
+Scrolling to the bottom was implemented by selecting the body tag, which usually is located at the bottom of documents.
+The program will click on links and open them on new tabs, extract the data, and then close it. Waits were 
+scattered here and there to account for the loading times. The whole process took 5 minutes, and only yielded \~150 rows.
+By putting more time (which I do not have for this project), the dataset can be scaled up. The amount of empty cells 
+can be reduced by waiting more (which means putting more time, and I do not have that luxury).
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=1\textwidth]{Bonus.jpg}
+    \caption{The extracted dataframe}
+    \label{fig:bonus}
+\end{figure}
 
 \makeendpage
 \end{document}
